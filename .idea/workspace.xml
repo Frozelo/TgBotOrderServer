@@ -5,22 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f359855-7821-4126-a7c4-585bf9fedcdf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/TgBotOderServer.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/tg_user_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dto/categories_dto.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dto/tg_user_category_relation_dto.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dto/tg_user_dto.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/categories.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/tg_users.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/tg_user_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/tg_user_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/tg_user_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/tg_user_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/tg_user_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +64,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

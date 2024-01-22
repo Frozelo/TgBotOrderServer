@@ -1,4 +1,4 @@
-from fastapi import HTTPException
+from fastapi import HTTPException, Depends
 from sqlalchemy.exc import IntegrityError
 
 from dto.tg_user_category_relation_dto import CreateTgUserCategoryRelation
@@ -23,21 +23,22 @@ def get_tg_users_list(db: Session):
     return db.query(TgUser).all()
 
 
-def create_user_categories_relation(data: CreateTgUserCategoryRelation, db: Session):
-    user = db.query(TgUser).get(data.user_id)
-    category = db.query(TgCategory).get(data.category_id)
+def create_user_categories_relation(tg_id, category, db):
+    tg_user = db.query(TgUser).filter(TgUser.tg_id == tg_id).first()
+    print(tg_user)
+    category = db.query(TgCategory).get(category.category_id)
 
-    if user is None or category is None:
+    if tg_user is None or category is None:
         raise HTTPException(status_code=404, detail="User or category not found")
 
     try:
-        if category in user.categories or user in category.tg_user:
+        if category in tg_user.categories or tg_user in category.tg_user:
             raise HTTPException(status_code=400, detail="Relation already exists")
 
-        user.categories.append(category)
-        category.tg_user.append(user)
+        tg_user.categories.append(category)
+        category.tg_user.append(tg_user)
         db.commit()
-        db.refresh(user)
+        db.refresh(tg_user)
         db.refresh(category)
 
         return {"message": "User-Category relation created successfully"}

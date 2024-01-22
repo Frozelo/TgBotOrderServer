@@ -21,10 +21,10 @@ async def get_tg_users_list(db: Session = Depends(get_db)):
     return tg_user_service.get_tg_users_list(db)
 
 
-@router.post("/create-user-categories-relation", tags=["tg_user"])
-async def create_user_categories_relation(data: tg_user_category_relation_dto.CreateTgUserCategoryRelation,
+@router.post("/create-user-categories-relation/user/{tg_id}", tags=["tg_user"])
+async def create_user_categories_relation(tg_id: int, category: TgCategory,
                                           db: Session = Depends(get_db)):
-    return tg_user_service.create_user_categories_relation(data, db)
+    return tg_user_service.create_user_categories_relation(tg_id, category, db)
 
 
 @router.get("/get-users-list-by-category/{category_id}", tags=["tg_user"])
