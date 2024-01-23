@@ -11,27 +11,27 @@ from services import tg_user_service
 router = APIRouter()
 
 
-@router.post("/create-user", tags=["tg_user"])
+@router.post("/user", tags=["tg_user"])
 async def create_user(data: tg_user_dto.CreateTgUser, db: Session = Depends(get_db)):
     return tg_user_service.create_user(data, db)
 
 
-@router.get("/get-user-list", tags=["tg_user"])
+@router.get("/users", tags=["tg_user"])
 async def get_tg_users_list(db: Session = Depends(get_db)):
     return tg_user_service.get_tg_users_list(db)
 
 
-@router.post("/create-user-categories-relation/user/{tg_id}/", tags=["tg_user"])
+@router.post("/relation/users/{tg_id}/", tags=["tg_user"])
 async def create_user_categories_relation(tg_id: int, category_id: TgCategory,
                                           db: Session = Depends(get_db)):
     return tg_user_service.create_user_categories_relation(tg_id, category_id, db)
 
 
-@router.get("/get-users-list-by-category/{category_id}", tags=["tg_user"])
+@router.get("/category/{category_id}", tags=["tg_user"])
 async def get_users_list_by_relation(category_id: int, db: Session = Depends(get_db)):
     return tg_user_service.get_user_list_by_category(category_id, db)
 
 
-@router.delete("/delete-user-categories-relation/user/{tg_id}", tags=["tg_user"])
+@router.delete("/relation/user/{tg_id}", tags=["tg_user"])
 async def delete_tg_user_categories_relation(tg_id: int, category: TgCategory, db: Session = Depends(get_db)):
     return tg_user_service.delete_user_categories_relation(tg_id, category, db)
