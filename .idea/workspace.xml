@@ -7,6 +7,7 @@
     <list default="true" id="4f359855-7821-4126-a7c4-585bf9fedcdf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/tg_user_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/tg_user_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example.db" beforeDir="false" afterPath="$PROJECT_DIR$/example.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/tg_user_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/tg_user_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

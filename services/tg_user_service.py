@@ -25,7 +25,6 @@ def get_tg_users_list(db: Session):
 
 def create_user_categories_relation(tg_id, category, db):
     tg_user = db.query(TgUser).filter(TgUser.tg_id == tg_id).first()
-    print(tg_user)
     category = db.query(TgCategory).get(category.category_id)
 
     if tg_user is None or category is None:
@@ -53,3 +52,22 @@ def get_user_list_by_category(category_id: int, db: Session):
     if not users:
         return HTTPException(status_code=404, detail=f"No users found for category with id {category_id}")
     return users
+
+
+def delete_user_categories_relation(tg_id: int, category: TgCategory, db: Session):
+    tg_user = db.query(TgUser).filter_by(tg_id=tg_id).first()
+    category = db.query(TgCategory).get(category.category_id)
+
+    if not tg_user or not category:
+        raise HTTPException(status_code=404, detail="User or category not found")
+
+    relation = db.query(user_categories_relation).filter_by(user_id=tg_user.id, category_id=category.id).first()
+
+    if not relation:
+        raise HTTPException(status_code=404, detail="Relation not found")
+
+    db.query(user_categories_relation).filter_by(user_id=tg_user.id, category_id=category.id).delete()
+    db.commit()
+    db.refresh(tg_user)
+
+    return {"message": "User-Category relation deleted successfully"}
