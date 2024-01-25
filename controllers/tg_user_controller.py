@@ -21,17 +21,18 @@ async def get_tg_users_list(db: Session = Depends(get_db)):
     return tg_user_service.get_tg_users_list(db)
 
 
-@router.post("/relation/users/{tg_id}/", tags=["tg_user"])
-async def create_user_categories_relation(tg_id: int, category_id: TgCategory,
+@router.post("/relation/user/{tg_id}/{category_id}", tags=["tg_user"])
+async def create_user_categories_relation(tg_id: int, category_id: int,
                                           db: Session = Depends(get_db)):
     return tg_user_service.create_user_categories_relation(tg_id, category_id, db)
 
 
+# TODO EDIT THIS URL PATH
 @router.get("/category/{category_id}", tags=["tg_user"])
 async def get_users_list_by_relation(category_id: int, db: Session = Depends(get_db)):
     return tg_user_service.get_user_list_by_category(category_id, db)
 
 
-@router.delete("/relation/user/{tg_id}", tags=["tg_user"])
-async def delete_tg_user_categories_relation(tg_id: int, category: TgCategory, db: Session = Depends(get_db)):
-    return tg_user_service.delete_user_categories_relation(tg_id, category, db)
+@router.delete("/relation/user/{tg_id}/{category_id}", tags=["tg_user"])
+async def delete_tg_user_categories_relation(tg_id: int, category_id: int, db: Session = Depends(get_db)):
+    return tg_user_service.delete_user_categories_relation(tg_id, category_id, db)

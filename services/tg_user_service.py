@@ -23,9 +23,11 @@ def get_tg_users_list(db: Session):
     return db.query(TgUser).all()
 
 
-def create_user_categories_relation(tg_id, category, db):
+def create_user_categories_relation(tg_id, category_id, db):
     tg_user = db.query(TgUser).filter(TgUser.tg_id == tg_id).first()
-    category = db.query(TgCategory).get(category.category_id)
+    print(tg_user)
+    category = db.query(TgCategory).get(category_id)
+    print(category)
 
     if tg_user is None or category is None:
         raise HTTPException(status_code=404, detail="User or category not found")
@@ -50,13 +52,13 @@ def get_user_list_by_category(category_id: int, db: Session):
     users = db.query(TgUser).filter(TgUser.categories.any(id=category_id)).all()
 
     if not users:
-        return HTTPException(status_code=404, detail=f"No users found for category with id {category_id}")
+        raise HTTPException(status_code=404, detail=f"No users found for category with id {category_id}")
     return users
 
 
-def delete_user_categories_relation(tg_id: int, category: TgCategory, db: Session):
+def delete_user_categories_relation(tg_id: int, category_id: int, db: Session):
     tg_user = db.query(TgUser).filter_by(tg_id=tg_id).first()
-    category = db.query(TgCategory).get(category.category_id)
+    category = db.query(TgCategory).get(category_id)
 
     if not tg_user or not category:
         raise HTTPException(status_code=404, detail="User or category not found")
