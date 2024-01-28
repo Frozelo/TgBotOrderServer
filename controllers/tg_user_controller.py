@@ -4,10 +4,7 @@ from sqlalchemy.orm import Session
 
 from database import get_db
 from dto import tg_user_dto, tg_user_category_relation_dto, categories_dto
-from dto.categories_dto import TgCategory
-
 from services import tg_user_service
-
 router = APIRouter()
 
 
@@ -23,7 +20,8 @@ async def get_tg_users_list(db: Session = Depends(get_db)):
 
 @router.post("/relation/user/{tg_id}/{category_id}", tags=["tg_user"])
 async def create_user_categories_relation(tg_id: int, category_id: int,
-                                          db: Session = Depends(get_db)):
+                                          db: Session = Depends(get_db),
+                                          ):
     return tg_user_service.create_user_categories_relation(tg_id, category_id, db)
 
 

@@ -7,6 +7,13 @@ from sqlalchemy.orm import Session
 from dto import tg_user_dto
 
 
+def check_user_permissions(tg_id: int, db: Session):
+    user = db.query(TgUser).filter(TgUser.tg_id == tg_id).first()
+    if not user or not user.has_permission:
+        raise HTTPException(status_code=403, detail="You don't have permission to do this action")
+    return user
+
+
 def create_user(data: tg_user_dto.CreateTgUser, db: Session):
     user = TgUser(tg_id=data.tg_id, username=data.username)
     try:
@@ -24,24 +31,21 @@ def get_tg_users_list(db: Session):
 
 
 def create_user_categories_relation(tg_id, category_id, db):
-    tg_user = db.query(TgUser).filter(TgUser.tg_id == tg_id).first()
-    print(tg_user)
+    user = check_user_permissions(tg_id, db)
     category = db.query(TgCategory).get(category_id)
-    print(category)
 
-    if tg_user is None or category is None:
-        raise HTTPException(status_code=404, detail="User or category not found")
+    if not category:
+        raise HTTPException(status_code=404, detail="Category not found")
+
+    if category in user.categories or user in category.tg_user:
+        raise HTTPException(status_code=400, detail="Relation already exists")
 
     try:
-        if category in tg_user.categories or tg_user in category.tg_user:
-            raise HTTPException(status_code=400, detail="Relation already exists")
-
-        tg_user.categories.append(category)
-        category.tg_user.append(tg_user)
+        user.categories.append(category)
+        category.tg_user.append(user)
         db.commit()
-        db.refresh(tg_user)
+        db.refresh(user)
         db.refresh(category)
-
         return {"message": "User-Category relation created successfully"}
     except IntegrityError:
         db.rollback()

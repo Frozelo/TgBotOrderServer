@@ -1,4 +1,4 @@
-from sqlalchemy import Table, Column, Integer, ForeignKey, String
+from sqlalchemy import Table, Column, Integer, ForeignKey, String, Boolean
 from sqlalchemy.orm import relationship, declarative_base
 
 from database import Base
@@ -16,8 +16,8 @@ class TgUser(Base):
     id = Column(Integer, primary_key=True)
     tg_id = Column(Integer, unique=True)
     username = Column(String)
-
     categories = relationship('TgCategory', secondary=user_categories_relation, back_populates='tg_user')
+    has_permission = Column(Boolean, default=False)
 
 
 class TgCategory(Base):
