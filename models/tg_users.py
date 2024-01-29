@@ -1,5 +1,5 @@
 from sqlalchemy import Table, Column, Integer, ForeignKey, String, Boolean
-from sqlalchemy.orm import relationship, declarative_base
+from sqlalchemy.orm import relationship, declarative_base, Session
 
 from database import Base
 
@@ -19,6 +19,8 @@ class TgUser(Base):
     categories = relationship('TgCategory', secondary=user_categories_relation, back_populates='tg_user')
     has_permission = Column(Boolean, default=False)
 
+    def get_tg_user(self, db: Session):
+        return db.query(TgUser).filter(TgUser.id == self.id).first()
 
 class TgCategory(Base):
     __tablename__ = 'tg_category'
