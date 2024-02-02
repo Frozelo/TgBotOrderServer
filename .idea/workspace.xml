@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f359855-7821-4126-a7c4-585bf9fedcdf" name="Changes" comment="Permit verification">
-      <change afterPath="$PROJECT_DIR$/utils/object_shortcuts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/perm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TgBotOderServer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TgBotOderServer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/tg_user_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/tg_user_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example.db" beforeDir="false" afterPath="$PROJECT_DIR$/example.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/tg_users.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/tg_users.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/tg_user_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/tg_user_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +26,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -49,7 +52,6 @@
   <component name="RunManager">
     <configuration name="tg_user_controller" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TgBotOderServer" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>

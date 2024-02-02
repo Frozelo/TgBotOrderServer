@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 from database import get_db
 from dto import tg_user_dto, tg_user_category_relation_dto, categories_dto
 from services import tg_user_service
+
 router = APIRouter()
 
 
@@ -23,6 +24,11 @@ async def create_user_categories_relation(tg_id: int, category_id: int,
                                           db: Session = Depends(get_db),
                                           ):
     return tg_user_service.create_user_categories_relation(tg_id, category_id, db)
+
+
+@router.get("/user/{tg_id}/categories", tags=["tg_user"])
+async def get_user_categories(tg_id: int, db: Session = Depends(get_db)):
+    return tg_user_service.get_categories_for_user(tg_id, db)
 
 
 # TODO EDIT THIS URL PATH

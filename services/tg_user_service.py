@@ -57,6 +57,13 @@ def create_user_categories_relation(tg_id, category_id, db):
         raise HTTPException(status_code=400, detail="Integrity error: relation already exists")
 
 
+def get_categories_for_user(tg_id: int, db: Session):
+    user = get_tg_user_by_tg_id(tg_id, db)
+    categories = db.query(TgCategory).filter(TgCategory.tg_user.any(id=user.id)).all()
+
+    return categories
+
+
 def delete_user_categories_relation(tg_id: int, category_id: int, db: Session):
     user = get_tg_user_by_tg_id(tg_id, db)
     category = db.query(TgCategory).get(category_id)
