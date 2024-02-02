@@ -10,11 +10,15 @@ def get_tg_user_by_tg_id(tg_id, db):
     return user
 
 
+def get_tg_users_list_by_category(category_id, db):
+    users = db.query(TgUser).filter(TgUser.categories.any(id=category_id)).all()
+    if not users:
+        raise HTTPException(status_code=404, detail=f"No users found for category with id {category_id}")
+    return users
+
+
 def get_category_by_id(category_id, db):
     category = db.query(TgCategory).filter(TgCategory.id == category_id).first()
     if not category:
         raise HTTPException(status_code=404, detail="Category not found")
     return category
-
-
-

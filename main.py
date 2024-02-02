@@ -8,7 +8,7 @@ from models.tg_users import Base
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
-app.include_router(router, prefix="/api")
+app.include_router(router, prefix="/api/v1")
 if __name__ == '__main__':
     uvicorn.run('main:app', host='0.0.0.0', port=8000, reload=True, workers=3)
    

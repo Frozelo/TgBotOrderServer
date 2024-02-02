@@ -19,16 +19,16 @@ async def get_tg_users_list(db: Session = Depends(get_db)):
     return tg_user_service.get_tg_users_list(db)
 
 
+@router.get("/user/{tg_id}/categories", tags=["tg_user"])
+async def get_category_list_for_user(tg_id: int, db: Session = Depends(get_db)):
+    return tg_user_service.get_category_list_for_user(tg_id, db)
+
+
 @router.post("/relation/user/{tg_id}/{category_id}", tags=["tg_user"])
 async def create_user_categories_relation(tg_id: int, category_id: int,
                                           db: Session = Depends(get_db),
                                           ):
     return tg_user_service.create_user_categories_relation(tg_id, category_id, db)
-
-
-@router.get("/user/{tg_id}/categories", tags=["tg_user"])
-async def get_user_categories(tg_id: int, db: Session = Depends(get_db)):
-    return tg_user_service.get_categories_for_user(tg_id, db)
 
 
 # TODO EDIT THIS URL PATH
