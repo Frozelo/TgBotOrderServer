@@ -1,9 +1,9 @@
-from fastapi import FastAPI, APIRouter, Depends
+from fastapi import APIRouter, Depends
 
 from sqlalchemy.orm import Session
 
 from database import get_db
-from dto import tg_user_dto, tg_user_category_relation_dto, categories_dto
+from dto import tg_user_dto
 from services import tg_user_service
 
 router = APIRouter()
@@ -12,6 +12,11 @@ router = APIRouter()
 @router.post("/user", tags=["tg_user"])
 async def create_user(data: tg_user_dto.CreateTgUser, db: Session = Depends(get_db)):
     return tg_user_service.create_user(data, db)
+
+
+@router.get("/users/{tg_id}", tags=["tg_user"])
+async def get_tg_user(tg_id: int, db: Session = Depends(get_db)):
+    return tg_user_service.get_user(tg_id, db)
 
 
 @router.get("/users", tags=["tg_user"])
@@ -35,6 +40,11 @@ async def create_user_categories_relation(tg_id: int, category_id: int,
 @router.get("/users/category/{category_id}", tags=["tg_user"])
 async def get_users_list_by_relation(category_id: int, db: Session = Depends(get_db)):
     return tg_user_service.get_user_list_by_category(category_id, True, db)
+
+
+@router.delete("/users/{tg_id}", tags=["tg_user"])
+async def delete_user(tg_id: int, db: Session = Depends(get_db)):
+    return tg_user_service.delete_tg_user(tg_id, db)
 
 
 @router.delete("/relation/user/{tg_id}/{category_id}", tags=["tg_user"])

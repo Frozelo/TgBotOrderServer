@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f359855-7821-4126-a7c4-585bf9fedcdf" name="Changes" comment="Permissions functor and code fixing">
+    <list default="true" id="4f359855-7821-4126-a7c4-585bf9fedcdf" name="Changes" comment="Small code improvements">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/tg_user_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/tg_user_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example.db" beforeDir="false" afterPath="$PROJECT_DIR$/example.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/tg_user_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/tg_user_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/object_shortcuts.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/object_shortcuts.py" afterDir="false" />
     </list>
@@ -38,16 +38,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.tg_user_controller.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/ivan/projects/TgBotOderServer&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.tg_user_controller.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/ivan/projects/TgBotOderServer",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TgBotOderServer" />
@@ -144,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1706897710026</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Small code improvements">
+      <created>1716455186305</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1716455186305</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -175,6 +182,7 @@
     <MESSAGE value="Permit verification" />
     <MESSAGE value="Small changes (categories by user added)" />
     <MESSAGE value="Permissions functor and code fixing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Permissions functor and code fixing" />
+    <MESSAGE value="Small code improvements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small code improvements" />
   </component>
 </project>
