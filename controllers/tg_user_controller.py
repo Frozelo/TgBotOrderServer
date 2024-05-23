@@ -32,9 +32,9 @@ async def create_user_categories_relation(tg_id: int, category_id: int,
 
 
 # TODO EDIT THIS URL PATH
-@router.get("/category/{category_id}", tags=["tg_user"])
+@router.get("/users/category/{category_id}", tags=["tg_user"])
 async def get_users_list_by_relation(category_id: int, db: Session = Depends(get_db)):
-    return tg_user_service.get_user_list_by_category(category_id, db)
+    return tg_user_service.get_user_list_by_category(category_id, True, db)
 
 
 @router.delete("/relation/user/{tg_id}/{category_id}", tags=["tg_user"])

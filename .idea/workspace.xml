@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f359855-7821-4126-a7c4-585bf9fedcdf" name="Changes" comment="Small changes (categories by user added)">
+    <list default="true" id="4f359855-7821-4126-a7c4-585bf9fedcdf" name="Changes" comment="Permissions functor and code fixing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/tg_user_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/tg_user_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example.db" beforeDir="false" afterPath="$PROJECT_DIR$/example.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/tg_user_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/tg_user_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/object_shortcuts.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/object_shortcuts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/perm.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/perm.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +48,28 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TgBotOderServer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="tg_user_controller" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TgBotOderServer" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -74,6 +93,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.tg_user_controller" />
       </list>
     </recent_temporary>
@@ -117,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1706881453998</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Permissions functor and code fixing">
+      <created>1706897710026</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706897710026</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,6 +174,7 @@
     <MESSAGE value="Very small fixes" />
     <MESSAGE value="Permit verification" />
     <MESSAGE value="Small changes (categories by user added)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small changes (categories by user added)" />
+    <MESSAGE value="Permissions functor and code fixing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Permissions functor and code fixing" />
   </component>
 </project>
